@@ -195,15 +195,28 @@ Cropper.prototype.buildDOM = function() {
 
   _elements.controls.crop = this._buildControl(this.options.actionLabels.crop);
 
-  // Target -> Wrapper -> buttons
-  _elements.controls.wrapper.appendChild(_elements.controls.rotateLeft);
-  _elements.controls.wrapper.appendChild(_elements.controls.zoomOut);
-  _elements.controls.wrapper.appendChild(_elements.controls.fit);
-  _elements.controls.wrapper.appendChild(_elements.controls.crop);
-  _elements.controls.wrapper.appendChild(_elements.controls.zoomIn);
-  _elements.controls.wrapper.appendChild(_elements.controls.rotateRight);
-  _elements.target.appendChild(_elements.controls.wrapper);
+	// Target -> Wrapper -> buttons
+	//d.parisi non passando la relativa label è ora possibile nascondere un bottone
+	if(this.options.actionLabels.rotateLeft){
+		_elements.controls.wrapper.appendChild(_elements.controls.rotateLeft);
+	}
+	if(this.options.actionLabels.zoomOut){
+		_elements.controls.wrapper.appendChild(_elements.controls.zoomOut);
+	}
+	if(this.options.actionLabels.fit){
+		_elements.controls.wrapper.appendChild(_elements.controls.fit);
+	}
+	if(this.options.actionLabels.crop){
+		_elements.controls.wrapper.appendChild(_elements.controls.crop);
+	}
+	if(this.options.actionLabels.zoomIn){
+		_elements.controls.wrapper.appendChild(_elements.controls.zoomIn);
+	}
+	if(this.options.actionLabels.rotateRight){
+		_elements.controls.wrapper.appendChild(_elements.controls.rotateRight);
+	}
 
+	_elements.target.appendChild(_elements.controls.wrapper);
   this.loadImage();
 };
 
