@@ -44,6 +44,8 @@ bower install https://unpkg.com/angular-image-cropper@1.1.4/bower.zip --save
 
 ## Usage
 
+Run webpack after each edit to regenerate the dist files.
+
 ### Load the required files
 
 #### Using modules
