@@ -1,11 +1,16 @@
 var webpack = require('webpack');
-
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var config = {
   
   entry: __dirname + '/src/index.js',
+    entry: {
+    "angular-image-cropper": __dirname + '/src/index.js',
+    "angular-image-cropper.min": __dirname + '/src/index.js'
+  },
+
   output: {
     path: __dirname + '/dist',
-    filename: 'angular-image-cropper.js',
+    filename: "[name].js",
 	library: 'imageCropper',
 	libraryTarget: 'umd'
   },
@@ -15,6 +20,9 @@ var config = {
   plugins: [
     new webpack.DefinePlugin({
       ON_TEST: process.env.NODE_ENV === 'test'
+    }),
+	new UglifyJsPlugin({
+        include: /\.min\.js$/
     })
   ],
 
