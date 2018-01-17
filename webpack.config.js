@@ -2,8 +2,7 @@ var webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var config = {
   
-  entry: __dirname + '/src/index.js',
-    entry: {
+  entry: {
     "angular-image-cropper": __dirname + '/src/index.js',
     "angular-image-cropper.min": __dirname + '/src/index.js'
   },
