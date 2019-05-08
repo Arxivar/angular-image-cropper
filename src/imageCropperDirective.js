@@ -60,7 +60,7 @@ module.exports = function (angular, Cropper) {
 				controller: imageCropperController,
 				link: function (scope, element, attributes, controller) {
 					controller.element = element[0];
-					this.init()
+					controller.init()
 				}
 			};
 		});
