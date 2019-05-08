@@ -23,7 +23,8 @@ module.exports = function (angular, Cropper) {
 					this.checkCrossOrigin = eval(this.checkCrossOrigin);
 					this.showControls = eval(this.showControls);
 
-
+				}
+				this.init = function () {
 					this.target = this.element;
 					this.api = new Cropper(self);
 
@@ -59,6 +60,7 @@ module.exports = function (angular, Cropper) {
 				controller: imageCropperController,
 				link: function (scope, element, attributes, controller) {
 					controller.element = element[0];
+					this.init()
 				}
 			};
 		});
